@@ -1,0 +1,43 @@
+﻿@model List<UserViewModel>
+<h1>Ben Test Sayfasıyım</h1>
+<h2>@ViewData["username"]</h2>
+<h2>@ViewBag.NameSurname</h2>
+
+<div>
+    <h2>Kullanıcı Bilgileri</h2>
+    @* <ul>
+    @foreach (var user in Model)
+    {
+    <li>Id            :  @user.Id</li>
+    <li>Ad Soyad      :  @user.NameSurname</li>
+    <li>Kullanıcı Adı :  @user.UserName</li>
+    <hr />
+    }
+    </ul> *@
+    <table class="table table-success table-striped table-bordered">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Ad Soyad</td>
+                <td>Kullanıcı Adı</td>
+                <td>Aksiyon</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.NameSurname</td>
+                    <td>@user.UserName</td>
+                    <td><a asp-controller="Home" asp-action="Parameters" asp-route-id="@user.Id"
+                           class="btn btn-outline-success">
+                        Kullanıcı Detay</a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>

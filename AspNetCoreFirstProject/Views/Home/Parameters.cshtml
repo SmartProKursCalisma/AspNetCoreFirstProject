@@ -1,0 +1,17 @@
+﻿@model UserViewModel
+
+<div>
+    <ul>
+        <li>Id : @Model.Id</li>
+        <li>Ad Soyad : @Model.NameSurname</li>
+        <li>Kullanıcı Adı : @Model.UserName</li>
+    </ul>
+</div>
+
+<form asp-action="FilteredProducts" asp-controller="Home" method="get">
+    <input type="number" name="minPrice" class="form-control" />
+    <input type="number" name="maxPrice" class="form-control" />
+   <input type="checkbox" name="isActive" class="form-check"  id="chc" />
+
+</form>
+<button id="test" type="submit">Ürünleri Getir</button>
